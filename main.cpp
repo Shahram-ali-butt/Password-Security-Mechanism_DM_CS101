@@ -1,7 +1,12 @@
 #include <iostream>
+#include <windows.h>
 #include "crypto_functions.h"
 
 using namespace std;
+
+const int headercolor = 11;
+const int Menucolor = 6;
+const int textcolor = 14;
 
 // Menus
 void printHeader();
@@ -23,6 +28,7 @@ void hashingExplanation();
 
 // Utility Function
 void stopExecution();
+void generateColors(int color);
 
 
 int main(){
@@ -121,13 +127,24 @@ int main(){
 
 //  Menus
 void printHeader(){
+    generateColors(headercolor);
+    SetConsoleOutputCP(CP_UTF8);
     cout << "==================================================" << endl;
+    cout << "     ███████████   █████████  ██████   ██████ " << endl;
+    cout << "    ░░███░░░░░███ ███░░░░░███░░██████ ██████  " << endl;
+    cout << "     ░███    ░███░███    ░░░  ░███░█████░███  " << endl;
+    cout << "     ░██████████ ░░█████████  ░███░░███ ░███  " << endl;
+    cout << "     ░███░░░░░░   ░░░░░░░░███ ░███ ░░░  ░███  " << endl;
+    cout << "     ░███         ███    ░███ ░███      ░███  " << endl;
+    cout << "     █████       ░░█████████  █████     █████ " << endl;
+    cout << "    ░░░░░         ░░░░░░░░░  ░░░░░     ░░░░░  " << endl << endl;                        
     cout << "   PASSWORD SECURITY MECHANISM - CS101 Project    " << endl;
     cout << "             Group 3: Shahram Ali Butt            " << endl;
     cout << "==================================================" << endl;
 }
 
 void mainMenu(){
+    generateColors(Menucolor);
     cout << "\n=========== PASSWORD ENCRYPTION SYSTEM ===========" << endl;
     cout << "1. Encrypt password (Caesar)" << endl;
     cout << "2. Encrypt password (Vigenere)" << endl;
@@ -138,6 +155,7 @@ void mainMenu(){
     cout << "7. Get Explanations" << endl;
     cout << "0. Exit" << endl;
     cout << "==================================================" << endl;
+    generateColors(textcolor);
 }
 
 void joinMenu(){
@@ -145,6 +163,7 @@ void joinMenu(){
     system("cls");
     printHeader();
 
+    generateColors(Menucolor);
     cout << "\n=============== Joining Two Ciphers ===============" << endl;
     cout << "1. Caesar Cipher" << endl;
     cout << "2. Vigenere Cipher" << endl;
@@ -152,6 +171,7 @@ void joinMenu(){
     cout << "0. Exit" << endl;
 
     while(true){
+        generateColors(textcolor);
         cout << endl << "Enter your combination (12, 13 or 23): ";
         cin >> choice;
         cin.ignore();
@@ -227,6 +247,7 @@ void joinMenu(){
 void explanationMenu(){
     char choice;
     
+    generateColors(Menucolor);
     cout << "\n================== Explanations ==================" << endl;
     cout << "1. Caesar Cipher" << endl;
     cout << "2. Vigenere Cipher" << endl;
@@ -235,6 +256,7 @@ void explanationMenu(){
     cout << "0. Exit" << endl;
 
     while(true){
+        generateColors(textcolor);
         cout << endl << "Enter your Choice: ";
         cin >> choice;
 
@@ -405,4 +427,9 @@ void stopExecution(){
     cout << '\n' << "Press Enter to continue...";
     cin.ignore();
     cin.get();
+}
+
+void generateColors(int color){
+  HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, color);
 }

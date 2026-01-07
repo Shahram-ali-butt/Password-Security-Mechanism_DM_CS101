@@ -106,7 +106,7 @@ Decrypted: HelloWorld
 ```
 Original: HelloWorld
 Keys: a=5, b=8
-Encrypted: RczzcKcfzn
+Encrypted: RcllaOaplx
 Decrypted: HelloWorld
 ```
 
