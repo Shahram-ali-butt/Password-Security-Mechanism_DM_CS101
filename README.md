@@ -182,16 +182,16 @@ loadUserDataDec(currentUsers, userNames[], userPasswords[]);
 **users.txt:**
 ```
 3
-RcllaOaplx,972352,hash
-Pcala,876543,hash
-Pcalancrclqh,765432,hash
+RcllaOaplx,972352
+Pcala,876543
+Pcalancrclqh,765432
 ```
 
 **signUpData.txt:**
 ```
 2
-Jhgcrlmrmlq,972352,hash
-Bhdrqlm,876543,hash
+Jhgcrlmrmlq,972352
+Bhdrqlm,876543
 ```
 
 ---
