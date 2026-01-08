@@ -124,7 +124,6 @@ int gcd(int a, int b) {
 }
 
 int modInverse(int a, int m) {
-    // Find modular multiplicative inverse using Extended Euclidean Algorithm
     a = a % m;
     for (int x = 1; x < m; x++) {
         if ((a * x) % m == 1) {
