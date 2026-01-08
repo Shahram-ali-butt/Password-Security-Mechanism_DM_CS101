@@ -69,12 +69,12 @@ string vigenereEncrypt(string text, string key) {
         
         if(isupper(character)){
             ascii = character - int('A');
-            ascii = (ascii + shift) % 26;
+            ascii = (ascii + shift + 26) % 26;
             shiftedChar = 'A' + ascii;
             result += shiftedChar;
         }else{
             ascii = character - int('a');
-            ascii = (ascii + shift) % 26;
+            ascii = (ascii + shift + 26) % 26;
             shiftedChar = 'a' + ascii;
             result += shiftedChar;
         }
@@ -97,12 +97,12 @@ string vigenereDecrypt(string text, string key) {
         
         if(isupper(character)){
             ascii = character - int('A');
-            ascii = (ascii - shift) % 26;
+            ascii = (ascii - shift + 26) % 26;
             shiftedChar = 'A' + ascii;
             result += shiftedChar;
         }else{
             ascii = character - int('a');
-            ascii = (ascii - shift) % 26;
+            ascii = (ascii - shift + 26) % 26;
             shiftedChar = 'a' + ascii;
             result += shiftedChar;
         }
@@ -147,12 +147,12 @@ string affineEncrypt(string text, int a, int shift) {
         character = text[i];
         if(isupper(character)){
             ascii = character - int('A');
-            ascii = (a * ascii + shift) % 26;
+            ascii = (a * ascii + shift + 26) % 26;
             shiftedChar = 'A' + ascii;
             result += shiftedChar;
         }else{
             ascii = character - int('a');
-            ascii = (a * ascii + shift) % 26;
+            ascii = (a * ascii + shift + 26) % 26;
             shiftedChar = 'a' + ascii;
             result += shiftedChar;
         } 
@@ -175,12 +175,12 @@ string affineDecrypt(string text, int a, int shift) {
         character = text[i];
         if(isupper(character)){
             ascii = character - int('A');
-            ascii = (aInv * (ascii - shift)) % 26;
+            ascii = (aInv * (ascii - shift + 26)) % 26;
             shiftedChar = 'A' + ascii;
             result += shiftedChar;
         }else{
             ascii = character - int('a');
-            ascii = (aInv * (ascii - shift)) % 26;
+            ascii = (aInv * (ascii - shift + 26)) % 26;
             shiftedChar = 'a' + ascii;
             result += shiftedChar;
         } 
