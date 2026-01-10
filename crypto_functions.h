@@ -19,7 +19,7 @@ string affineDecrypt(string text, int a, int shift);
 
 int modInverse(int a, int m);
 
-int gcd(int a, int b);
+int gcd(int num1, int num2);
 
 //  HASHING
 string hashPassword(string password);

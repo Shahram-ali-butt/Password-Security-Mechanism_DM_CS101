@@ -114,15 +114,34 @@ string vigenereDecrypt(string text, string key) {
 
 // AFFINE CIPHER IMPLEMENTATION
 
-int gcd(int a, int b) {
-    while (b != 0) {
-        int t = b;
-        b = a % b;
-        a = t;
+int gcd(int num1, int num2){
+    int remainder = 1;
+    if(num1 < num2){
+        while(remainder != 0){
+            remainder = num2 % num1;
+            num2 = remainder;
+            remainder = num1 % remainder;
+            num1 = num2;
+            if(remainder == 0){
+                return num1;
+            }
+            num2 = remainder;
+        }
     }
-    return a;
+    if(num1 > num2){
+        while(remainder != 0){
+            remainder = num1 % num2;
+            num1 = remainder;
+            remainder = num2 % remainder;
+            num2 = num1;
+            if(remainder == 0){
+                return num2;
+            }
+            num2 = remainder;
+        }
+    }
+    return 1;
 }
-
 int modInverse(int a, int m) {
     a = a % m;
     for (int x = 1; x < m; x++) {
